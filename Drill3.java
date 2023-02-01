@@ -8,17 +8,17 @@ class TextTweet {
     }
 
     boolean hasMention(String username) {
-        if(contents.contains("@" + username + " ")) {
+        if(contents.contains("@" + username + "")) {
             return true;
         }
-        else {return false;}
+        return false;
     }
 
     boolean hasLike() {
         if(likes > 0) {
             return true;
         }
-        else {return false;}
+        return false;
     }
 
     String firstMention() {
@@ -26,10 +26,18 @@ class TextTweet {
         int spaceIndex = contents.indexOf(' ', index);
         return contents.substring(index + 1, spaceIndex);
     }
-
-    
-
 }
+
+class Drill3 {
+    TextTweet a = new TextTweet("@dummy1 @dummy2", 10);
+    boolean mention = a.hasMention("dummy2");
+
+    public static void main(String[] args) {
+        String username = "dummy2";
+        System.out.println("@" + username + " ");
+    }
+}
+
 
 class ReplyTweet {
     TextTweet replyTo;
