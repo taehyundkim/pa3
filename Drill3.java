@@ -8,7 +8,7 @@ class TextTweet {
     }
 
     boolean hasMention(String username) {
-        if(contents.contains("@" + username + "")) {
+        if(contents.matches(".*@" + username + ".*")) {
             return true;
         }
         return false;
@@ -34,7 +34,7 @@ class Drill3 {
 
     public static void main(String[] args) {
         String username = "dummy2";
-        System.out.println("@" + username + " ");
+        System.out.println(" @" + username + " ");
     }
 }
 
