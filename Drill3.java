@@ -8,7 +8,9 @@ class TextTweet {
     }
 
     boolean hasMention(String username) {
-        if(contents.matches(".*@" + username + ".*")) {
+        String s2 = this.contents + " ";
+        String subString = "@" + username + " ";
+        if(s2.contains(subString)) {
             return true;
         }
         return false;
@@ -27,17 +29,6 @@ class TextTweet {
         return contents.substring(index + 1, spaceIndex);
     }
 }
-
-class Drill3 {
-    TextTweet a = new TextTweet("@dummy1 @dummy2", 10);
-    boolean mention = a.hasMention("dummy2");
-
-    public static void main(String[] args) {
-        String username = "dummy2";
-        System.out.println(" @" + username + " ");
-    }
-}
-
 
 class ReplyTweet {
     TextTweet replyTo;
