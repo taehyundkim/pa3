@@ -14,7 +14,7 @@ class TextTweet {
         else {return false;}
     }
 
-    boolean hasLikes() {
+    boolean hasLike() {
         if(likes > 0) {
             return true;
         }
