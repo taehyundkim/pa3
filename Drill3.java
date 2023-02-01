@@ -47,7 +47,7 @@ class ReplyTweet {
         if(this.likes > replyTo.likes) {
             return true;
         }
-        else {return false;}
+        return false;
     }
 
     int allLikes() {
@@ -55,9 +55,11 @@ class ReplyTweet {
     }
 
     boolean hasMention(String username) {
-        if(this.contents.contains("@" + username + " ") || replyTo.contents.contains("@" + username + " ")) {
+        String s2 = this.contents + " ";
+        String r2 = replyTo.contents + " ";
+        if(s2.contains("@" + username + " ") || r2.contains("@" + username + " ")) {
             return true;
         }
-        else {return false;}
+        return false;
     }
 }
