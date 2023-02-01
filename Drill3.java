@@ -26,7 +26,10 @@ class TextTweet {
     String firstMention() {
         int index = contents.indexOf('@');
         int spaceIndex = contents.indexOf(' ', index);
-        return contents.substring(index + 1, spaceIndex);
+        if(index == -1 || spaceIndex == -1) {
+            return "";
+        }
+        else {return contents.substring(index + 1, spaceIndex);}
     }
 }
 
